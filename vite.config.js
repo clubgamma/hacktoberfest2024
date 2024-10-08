@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
 
   
   return {
+    base: "/hacktoberfest2024",
     plugins: [react()],
     // base: '/hacktoberfest2024/',
     resolve: {
