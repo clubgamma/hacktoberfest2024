@@ -9,7 +9,7 @@ export default function ProjectShowcase() {
 
   const projects = [
     {
-      title: "Club Gamma Website (Vite+React)",
+      title: "Club Gamma Website (React)",
       description: "A modern and responsive website built using Vite and React, showcasing advanced web development skills and design aesthetics.",
       buttonText: "Github",
       url: "https://github.com/bhavyaGP/CPworld"
@@ -27,14 +27,32 @@ export default function ProjectShowcase() {
       url: "https://github.com/bhavyaGP/CPworld"
     },
     {
-      title: "Machine Learning Project (AI/ML)",
-      description: "An advanced machine learning project that leverages AI technologies to deliver high performance and accurate predictions.",
+      title: "Weather Web App (Frontend)",
+      description: "This project creates a weather web app using HTML, CSS, and JavaScript, providing real-time weather updates and forecasts.",
+      buttonText: "Github",
+      url: "https://github.com/bhavyaGP/CPworld"
+    },
+    {
+      title: "Air Quality Index Analysis (AI/ML)",
+      description: "This project utilizes machine learning to predict AQI levels in Delhi during winter, employing SMOTE to improve data balance and accuracy.",
       buttonText: "Github",
       url: "https://github.com/bhavyaGP/StudentFlow"
     },
     {
-      title: "Core C/C++ Project (Innovative)",
-      description: "An innovative project developed using C/C++, showcasing problem-solving abilities and efficient data processing techniques.",
+      title: "Summarize papers (AI/ML)",
+      description: "This project develops an application that summarizes research papers using NLP techniques like NLTK and spaCy for essential information extraction.",
+      buttonText: "Github",
+      url: "https://github.com/bhavyaGP/StudentFlow"
+    },
+    {
+      title: "Sudoku (C)",
+      description: "This project implements a Sudoku game in C, allowing users to play, solve puzzles, and validate their solutions.",
+      buttonText: "Github",
+      url: "https://github.com/bhavyaGP/StudentFlow"
+    },
+    {
+      title: "Ticket Booking (C)",
+      description: "This project features a menu-driven ticket booking system in C, enabling users to book, cancel, and view tickets easily.",
       buttonText: "Github",
       url: "https://github.com/bhavyaGP/StudentFlow"
     }

@@ -1,13 +1,7 @@
-import React, { useState, useEffect, useCallback } from "react";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import React, {useCallback, useEffect, useState} from "react";
+import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue,} from "@/components/ui/select";
+import {Input} from "@/components/ui/input";
+import {Button} from "@/components/ui/button";
 import {
     Pagination,
     PaginationContent,
@@ -16,16 +10,9 @@ import {
     PaginationNext,
     PaginationPrevious,
 } from "@/components/ui/pagination";
-import { GitPullRequestIcon, TrophyIcon, SearchIcon, SlidersHorizontal } from "lucide-react";
-import {
-    Sheet,
-    SheetContent,
-    SheetDescription,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
-} from "@/components/ui/sheet";
-import { Slider } from "@/components/ui/slider";
+import {GitPullRequestIcon, SearchIcon, SlidersHorizontal, TrophyIcon} from "lucide-react";
+import {Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger,} from "@/components/ui/sheet";
+import {Slider} from "@/components/ui/slider";
 import Global from "@/Global";
 import 'ldrs/infinity'
 
@@ -118,8 +105,7 @@ const LeaderBoard = () => {
 
     return (
         <div className="min-h-screen font-dm-sans bg-[#1C1C1C] text-white">
-            <main className="container mx-auto px-4 py-8">
-                <h1 className="text-4xl font-bold mb-8 text-white">Leaderboard</h1>
+            <main className="container mx-auto px-4 py-8 pt-32">
 
                 {/* User Stats Card */}
                 {currentUser && (

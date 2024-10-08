@@ -1,41 +1,9 @@
-import React, { useEffect } from 'react';
-import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { GitPullRequest } from 'lucide-react';
+import React, {useEffect} from 'react';
+import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import {GitPullRequest} from 'lucide-react';
 import Global from '@/Global';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import 'ldrs/infinity'
-
-const userData = {
-    name: "Jalay Patel",
-    username: "jalayp1",
-    avatar: "/api/placeholder/400/400",
-    bio: "Open Source Enthusiast | Full Stack Developer",
-    stats: {
-        pullRequests: 47,
-        repositories: 32,
-        followers: 128,
-        following: 89
-    },
-    recentPRs: [
-        {
-            title: "Add dark mode support",
-            repo: "shadcn/ui",
-            status: "merged"
-        },
-        {
-            title: "Fix responsive layout issues",
-            repo: "react-icons/react-icons",
-            status: "open"
-        },
-        {
-            title: "Update documentation",
-            repo: "vitejs/vite",
-            status: "closed"
-        }
-    ]
-};
 
 const StatusBadge = ({ state }) => {
     const colors = {
