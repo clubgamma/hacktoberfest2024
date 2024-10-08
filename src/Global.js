@@ -1,5 +1,7 @@
 import axios from "axios";
-const serverUrl = '/api';  // Use /api to allow proxying in development
+const serverUrl = import.meta.env.MODE === 'production'
+    ? import.meta.env.VITE_API_URL + '/api'  // This should point to your backend API in production
+    : '/api';  // Use proxy in development
 
 export default class Global {
     static user;
