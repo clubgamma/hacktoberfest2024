@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import ContactUs from '@/Components/ContactUs';
-import Footer from '@/Components/Footer';
-import Hero from '@/Components/Hero';
-import Projects from '@/Components/Projects';
-import QandA from '@/Components/Q&A';
-import Stat from '@/Components/Stat';
+import ContactUs from '@/components/ContactUs';
+import Footer from '@/components/Footer';
+import Hero from '@/components/Hero';
+import Projects from '@/components/Projects';
+import QandA from '@/components/Q&A';
+import Stat from '@/components/Stat';
 
 const Home = () => {
     const location = useLocation();
