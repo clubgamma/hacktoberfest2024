@@ -7,6 +7,7 @@ export default defineConfig(({ mode }) => {
   // Load environment variables from .env files
   const env = loadEnv(mode, process.cwd());
 
+  
   return {
     plugins: [react()],
     // base: '/hacktoberfest2024/',
