@@ -10,7 +10,7 @@ const Footer = () => {
                 {/* Email Section - Aligns center on small screens and inline on larger screens */}
                 <p className="text-md mb-2 md:mb-0">
                     <a href="mailto:info@clubgamma.com" className="text-white font-dm-sans">
-                        22ce071@charusat.edu.in
+                    gce@charusat.edu.in
                     </a>
                 </p>
 
