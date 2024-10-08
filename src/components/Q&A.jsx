@@ -8,7 +8,7 @@ const slides = [
         content: (
             <>
                 <p>Club Gamma is the community which aims to work together and grow together. We are going to celebrate the Hacktoberfest this year with great enthusiasm.</p>
-                <p>We will put <strong className='text-red-500'>projects</strong> on different fields like <strong className='text-red-500'>Mobile App Development, Web Development, Python</strong>, etc. We will initialize some <strong className='text-red-500'>GitHub Repo</strong> and make them open-source. Anyone can contribute to any of those projects during Hacktoberfest and avail the <strong className='text-red-500'>cool prizes</strong> by DigitalOcean and GitHub.</p>
+                <p>We will put <strong className='text-red-500'>projects</strong> on different fields like <strong className='text-red-500'>MERN Stack Development, AI/ML , Core C++ Project</strong>, etc. We will initialize some <strong className='text-red-500'>GitHub Repo</strong> and make them open-source. Anyone can contribute to any of those projects during Hacktoberfest and avail the <strong className='text-red-500'>cool prizes</strong> by DigitalOcean and GitHub.</p>
             </>
         ),
     },
@@ -68,7 +68,7 @@ const QandA = () => {
     };
 
     return (
-        <div className="flex flex-col w-full items-center justify-center min-h-[90vh] text-white">
+        <div className="flex flex-col w-full items-center justify-center min-h-[90vh] text-white ">
             <div className="w-full max-w-5xl relative">
                 <button
                     onClick={prevSlide}
@@ -92,10 +92,10 @@ const QandA = () => {
                             exit={{ opacity: 0, x: -100 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-dm-sans font-bold mb-6">
+                            <h2 className="text-5xl font-dm-sans font-bold mb-6">
                                 {slides[currentSlide].title}
                             </h2>
-                            <div className="text-base md:text-lg lg:text-xl font-poppins mb-8 p-7 leading-relaxed space-y-4 text-left">
+                            <div className="text-lg font-poppins mb-8 p-7 leading-relaxed space-y-4 text-left">
                                 {slides[currentSlide].content}
                             </div>
                         </motion.div>
@@ -106,13 +106,15 @@ const QandA = () => {
                     {slides.map((_, index) => (
                         <div
                             key={index}
-                            className={`w-3 h-3 rounded-full ${index === currentSlide ? 'bg-white' : 'bg-gray-500'}`}
+                            className={`w-3 h-3 rounded-full ${index === currentSlide
+                                ? 'bg-white'
+                                : 'bg-gray-500'
+                                }`}
                         />
                     ))}
                 </div>
             </div>
         </div>
-
     );
 };
 
