@@ -119,7 +119,7 @@ const LeaderBoard = () => {
     return (
         <div className="min-h-screen font-dm-sans bg-[#1C1C1C] text-white">
             <main className="container mx-auto px-4 py-8">
-                <h1 className="text-4xl font-bold mb-8 text-white">Leaderboard</h1>
+                {/* <h1 className="text-4xl font-bold mb-8 text-white">Leaderboard</h1> */}
 
                 {/* User Stats Card */}
                 {currentUser && (
