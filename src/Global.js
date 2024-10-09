@@ -13,9 +13,20 @@ export default class Global {
     static async getUser() {
         try {
             const res = await this.httpGet("/auth/me");
+            this.user = res.user;
             return res.user;
         } catch (err) {
             throw new Error("User not found");
+        }
+    }
+
+    static async logout() {
+        try {
+            localStorage.removeItem("token");
+            this.user = null;
+            window.location.reload();
+        } catch (err) {
+            throw new Error("Error logging out");
         }
     }
 

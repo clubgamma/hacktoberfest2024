@@ -26,7 +26,7 @@ function App() {
         const initializeUser = async () => {
             try {
                 if (location.pathname !== '/redirect') {
-                    Global.user = await Global.getUser();
+                    await Global.getUser();
                 }
             } catch (err) {
                 console.error(err);

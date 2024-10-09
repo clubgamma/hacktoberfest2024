@@ -18,15 +18,12 @@ const Navbar = ({ onContactClick, onQandAClick, onStatusClick, onProjectsClick, 
 
     const handleGithubLogin = () => {
         // window.location.href = `${import.meta.env.VITE_API_URL}/api/auth/github`;
-        window.location.assign(`https://github.com/login/oauth/authorize?client_id=${import.meta.env.VITE_GITHUB_CLIENT_ID}`);
+        window.location.assign(`https://github.com/login/oauth/authorize?client_id=${import.meta.env.VITE_GITHUB_CLIENT_ID}&scope=user:email`);
     };
 
     const handleLogout = async () => {
         try {
-            // await Global.httpPost("/auth/logout");
-            localStorage.removeItem("token");
-            Global.user = null;
-            window.location.reload();
+            await Global.logout();
         } catch (err) {
             console.error(err);
         }

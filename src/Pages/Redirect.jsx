@@ -49,7 +49,7 @@ export default function RedirectPage() {
                 const response = await Global.httpGet('/auth/access_token?code=' + code);
                 const token = response.token;
                 localStorage.setItem('token', token);
-                Global.user = await Global.getUser();
+                await Global.getUser();
 
                 // Wait for animation to complete before redirecting
                 setTimeout(() => {
