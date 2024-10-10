@@ -131,10 +131,7 @@ const Navbar = ({ onContactClick, onQandAClick, onStatusClick, onProjectsClick, 
                 </div>
             </div>
             
-            {/* Content Wrapper with margin-top */}
-            <div className="mt-[64px]"> 
-                <Outlet />
-            </div>
+            <Outlet />
         </>
     );
 };

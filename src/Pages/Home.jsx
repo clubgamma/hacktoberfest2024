@@ -24,16 +24,16 @@ const Home = () => {
     return (
         <div className='bg-gradient-to-br from-[#1e1e1e] to-[#4e3535]'>
             <Hero />
-            <div id="q&a">
+            <div id="q&a" className='pt-20'>
                 <QandA />
             </div>
-            <div id="stat">
+            <div id="stat" className='pt-20'>
                 <Stat />
             </div>
-            <div id="project">
+            <div id="project" className='pt-20'>
                 <Projects />
             </div>
-            <div id="contact">
+            <div id="contact" className='pt-20'>
                 <ContactUs />
             </div>
             <Footer />

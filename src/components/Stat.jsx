@@ -30,7 +30,7 @@ const CountUp = ({ end, duration = 2000 }) => {
 
 const Stat = () => {
     return (
-        <div className="min-h-[80vh]  flex  justify-center p-4">
+        <div className="min-h-[55vh]  flex  justify-center p-4">
             <div className="max-w-4xl w-full">
                 <h1 className="text-4xl md:text-5xl font-dm-sans font-bold text-center text-white mb-12">
                     Club Gamma Hacktoberfest
