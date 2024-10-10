@@ -130,8 +130,8 @@ const Navbar = ({ onContactClick, onQandAClick, onStatusClick, onProjectsClick, 
                     </nav>
                 </div>
             </div>
-
-            <Outlet/>
+            
+            <Outlet />
         </>
     );
 };

@@ -69,7 +69,7 @@
         };
 
         return (
-            <div className="flex flex-col w-full items-center justify-center min-h-[90vh] text-white ">
+            <div className="flex flex-col w-full items-center justify-center min-h-[70vh] text-white ">
                 <div className="w-full max-w-5xl relative">
                     <button
                         onClick={prevSlide}

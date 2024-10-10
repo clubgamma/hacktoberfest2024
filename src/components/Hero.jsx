@@ -14,7 +14,9 @@ const Hero = () => {
                         </span>
                         for students who are looking for Open source contribution
                     </h1>
-                    <button className="relative font-poppins inline-block text-white py-3 px-8 border-2 border-red-500 rounded-xl font-bold hover:bg-red-500 hover:text-black transition-all duration-300 hover:scale-[0.97] shadow-lg hover:shadow-none">
+                    <button className="relative font-poppins inline-block text-white py-3 px-8 border-2 border-red-500 rounded-xl font-bold hover:bg-red-500 hover:text-black transition-all duration-300 hover:scale-[0.97] shadow-lg hover:shadow-none"
+                        onClick={()=> window.open("https://hacktoberfest.com/auth", "_blank")}
+                    >
                         Register
                     </button>
                 </div>
