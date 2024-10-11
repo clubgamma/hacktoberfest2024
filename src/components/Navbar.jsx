@@ -1,17 +1,12 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import logo from '@/assets/logo.jpeg';
 import Global from '@/Global';
-import { Button } from "@/components/ui/button";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { User, Menu, X, GithubIcon } from 'lucide-react';
-import { RiMenu3Fill } from "react-icons/ri";
-import { IoMdClose } from "react-icons/io";
-import { Outlet, Link } from 'react-router-dom';
+import {Button} from "@/components/ui/button";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
+import {User} from 'lucide-react';
+import {RiMenu3Fill} from "react-icons/ri";
+import {IoMdClose} from "react-icons/io";
+import {Link, Outlet} from 'react-router-dom';
 
 const Navbar = ({ onHeroClick, onContactClick, onQandAClick, onStatusClick, onProjectsClick, onLeaderboardClick }) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -132,7 +127,7 @@ const Navbar = ({ onHeroClick, onContactClick, onQandAClick, onStatusClick, onPr
                     </nav>
                 </div>
             </div>
-            
+
             <Outlet />
         </>
     );
