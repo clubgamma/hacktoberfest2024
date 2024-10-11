@@ -26,16 +26,16 @@ const Home = () => {
             <div id="hero">
                 <Hero/>
             </div>
-            <div id="q&a">
+            <div id="q&a" className='pt-20'>
                 <QandA/>
             </div>
-            <div id="stat">
+            <div id="stat" className='pt-20'>
                 <Stat/>
             </div>
-            <div id="project">
+            <div id="project" className='pt-20'>
                 <Projects/>
             </div>
-            <div id="contact">
+            <div id="contact" className='pt-20'>
                 <ContactUs/>
             </div>
             <Footer/>
