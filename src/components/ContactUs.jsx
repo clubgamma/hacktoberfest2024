@@ -24,6 +24,7 @@ function SocialIcon({ Icon, color, name }) {
     return (
         <a
             href={links.socials[name]}
+            target="_blank"
             className="rounded-full p-3 transition-transform hover:scale-110 "
             style={{ backgroundColor: color }}
         >

@@ -57,6 +57,7 @@ function App() {
         <Routes>
             <Route path="/" element={
                 <Navbar
+                    onHeroClick={() => handleNavigation('hero')}
                     onContactClick={() => handleNavigation('contact')}
                     onQandAClick={() => handleNavigation('q&a')}
                     onStatusClick={() => handleNavigation('stat')}

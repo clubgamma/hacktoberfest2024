@@ -1,19 +1,14 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import logo from '@/assets/logo.jpeg';
 import Global from '@/Global';
-import { Button } from "@/components/ui/button";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { User, Menu, X, GithubIcon } from 'lucide-react';
-import { RiMenu3Fill } from "react-icons/ri";
-import { IoMdClose } from "react-icons/io";
-import { Outlet, Link } from 'react-router-dom';
+import {Button} from "@/components/ui/button";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
+import {User} from 'lucide-react';
+import {RiMenu3Fill} from "react-icons/ri";
+import {IoMdClose} from "react-icons/io";
+import {Link, Outlet} from 'react-router-dom';
 
-const Navbar = ({ onContactClick, onQandAClick, onStatusClick, onProjectsClick, onLeaderboardClick }) => {
+const Navbar = ({ onHeroClick, onContactClick, onQandAClick, onStatusClick, onProjectsClick, onLeaderboardClick }) => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const handleGithubLogin = () => {
@@ -48,7 +43,9 @@ const Navbar = ({ onContactClick, onQandAClick, onStatusClick, onProjectsClick, 
 
                 {/* Navbar Links (visible on larger screens) */}
                 <div className="hidden lg:flex gap-12 font-montserrat text-lg">
-                    <a href="/" className="text-white hover:text-red-500 transition-all duration-300">Home</a>
+                    <button onClick={onHeroClick}
+                            className="text-white hover:text-red-500 transition-all duration-300">Home
+                    </button>
                     <button onClick={onQandAClick}
                             className="text-white hover:text-red-500 transition-all duration-300">Q&A
                     </button>
@@ -130,7 +127,7 @@ const Navbar = ({ onContactClick, onQandAClick, onStatusClick, onProjectsClick, 
                     </nav>
                 </div>
             </div>
-            
+
             <Outlet />
         </>
     );

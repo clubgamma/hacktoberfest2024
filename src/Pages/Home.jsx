@@ -23,20 +23,22 @@ const Home = () => {
 
     return (
         <div className='bg-gradient-to-br from-[#1e1e1e] to-[#4e3535]'>
-            <Hero />
-            <div id="q&a" className='pt-20'>
-                <QandA />
+            <div id="hero">
+                <Hero/>
             </div>
-            <div id="stat" className='pt-20'>
-                <Stat />
+            <div id="q&a">
+                <QandA/>
             </div>
-            <div id="project" className='pt-20'>
-                <Projects />
+            <div id="stat">
+                <Stat/>
             </div>
-            <div id="contact" className='pt-20'>
-                <ContactUs />
+            <div id="project">
+                <Projects/>
             </div>
-            <Footer />
+            <div id="contact">
+                <ContactUs/>
+            </div>
+            <Footer/>
         </div>
     );
 };
