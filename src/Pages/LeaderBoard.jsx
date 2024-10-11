@@ -127,12 +127,20 @@ const LeaderBoard = () => {
                         <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
                             <div className="flex items-center space-x-4">
                                 <img
-                                    src={currentUser.avatarUrl || "https://github.com/identicons/jasonlong.png"}
+                                    // src={currentUser.avatarUrl || "https://github.com/identicons/jasonlong.png"}
+                                    src={currentUser.githubId ? `https://avatars.githubusercontent.com/${currentUser.githubId}` : "https://github.com/identicons/jasonlong.png"} 
                                     alt={currentUser.username}
                                     className="w-20 h-20 rounded-full border-4 border-[#FF4545]"
                                 />
                                 <div>
-                                    <h2 className="text-3xl font-bold text-white">{currentUser.username}</h2>
+                                    <h2 className="text-3xl font-bold text-white">{ Global.user.name}</h2>
+                                    <h2 
+                                        className="text-base text-blue-400 cursor-pointer" 
+                                        onClick={() => window.open(`https://github.com/${currentUser.githubId}`, '_blank')}
+                                    >
+                                        @{currentUser.githubId}
+                                    </h2>
+
                                     <p className="text-[#FF4545] text-lg">Rank #{currentUser.rank}</p>
                                 </div>
                             </div>
@@ -263,11 +271,16 @@ const LeaderBoard = () => {
                                             )}
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 whitespace-nowrap">
+                                    <td className="px-6 py-3 whitespace-nowrap">
                                         <div className="flex items-center">
-                                            <img className="h-10 w-10 rounded-full border-2 border-[#FF4545]" src={contributor.avatarUrl || "https://github.com/identicons/jasonlong.png"} alt="" />
+                                            {/* <img className="h-10 w-10 rounded-full border-2 border-[#FF4545]" src={contributor.avatarUrl || "https://github.com/identicons/jasonlong.png"} alt="" /> */}
+                                            <img 
+                                                className="h-12 w-12 rounded-full border-2 border-[#FF4545]" 
+                                                src={contributor.githubId ? `https://avatars.githubusercontent.com/${contributor.githubId}` : "https://github.com/identicons/jasonlong.png"} 
+                                                alt="Contributor's avatar"
+                                            />
                                             <div className="ml-4">
-                                                <div className="text-sm font-medium text-white">{contributor.githubId}</div>
+                                                <div className="text-sm font-medium text-white">{contributor.githubId}</div> 
                                             </div>
                                         </div>
                                     </td>
