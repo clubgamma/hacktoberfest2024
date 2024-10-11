@@ -83,12 +83,16 @@ const LeaderBoard = () => {
                 params.append('name', searchTerm);
             }
 
-            // Add filter parameters if any filters are set
-            if (filters.minPoints > 0 || filters.maxPoints < 100 || filters.minPrs > 0) {
-                if (filters.minPoints > 0) params.append('minPoints', filters.minPoints);
-                if (filters.maxPoints < 100) params.append('maxPoints', filters.maxPoints);
-                if (filters.minPrs > 0) params.append('minPrs', filters.minPrs);
+            if (filters.minPoints > 0) {
+                params.append('minPoints', filters.minPoints);
             }
+            if (filters.maxPoints < 100) {
+                params.append('maxPoints', filters.maxPoints);
+            }
+            if (filters.minPrs > 0) {
+                params.append('minPrs', filters.minPrs);
+            }
+
 
             // Concatenate the URL and the query string
             const url = `/leaderboard?${params.toString()}`;
