@@ -71,19 +71,31 @@ const LeaderBoard = () => {
     const fetchContributors = async () => {
         setLoading(true);
         try {
-            let url = `/leaderboard?page=${page}&limit=${limit}`;
+            // Initialize query parameters
+            const params = new URLSearchParams();
 
+            // Add pagination parameters
+            params.append('page', page);
+            params.append('limit', limit);
+
+            // Add search term if it exists
             if (searchTerm) {
-                url = `/leaderboard/search?name=${searchTerm}&page=${page}&limit=${limit}`;
+                params.append('name', searchTerm);
             }
 
+            // Add filter parameters if any filters are set
             if (filters.minPoints > 0 || filters.maxPoints < 100 || filters.minPrs > 0) {
-                url = `/leaderboard/filter?minPoints=${filters.minPoints}&maxPoints=${filters.maxPoints}&minPrs=${filters.minPrs}&page=${page}&limit=${limit}`;
+                if (filters.minPoints > 0) params.append('minPoints', filters.minPoints);
+                if (filters.maxPoints < 100) params.append('maxPoints', filters.maxPoints);
+                if (filters.minPrs > 0) params.append('minPrs', filters.minPrs);
             }
+
+            // Concatenate the URL and the query string
+            const url = `/leaderboard?${params.toString()}`;
 
             const response = await Global.httpGet(url);
-            setContributors(response.contributors);
-            setTotalPages(response.meta.totalPages);
+            setContributors(response.contributors || []);
+            setTotalPages(response.meta && response.meta.totalPages ? response.meta.totalPages : 1);
         } catch (error) {
             console.error("Error fetching contributors:", error);
         } finally {
@@ -128,14 +140,14 @@ const LeaderBoard = () => {
                             <div className="flex items-center space-x-4">
                                 <img
                                     // src={currentUser.avatarUrl || "https://github.com/identicons/jasonlong.png"}
-                                    src={currentUser.githubId ? `https://avatars.githubusercontent.com/${currentUser.githubId}` : "https://github.com/identicons/jasonlong.png"} 
+                                    src={currentUser.githubId ? `https://avatars.githubusercontent.com/${currentUser.githubId}` : "https://github.com/identicons/jasonlong.png"}
                                     alt={currentUser.username}
                                     className="w-20 h-20 rounded-full border-4 border-[#FF4545]"
                                 />
                                 <div>
                                     <h2 className="text-3xl font-bold text-white">{ Global.user.name}</h2>
-                                    <h2 
-                                        className="text-base text-blue-400 cursor-pointer" 
+                                    <h2
+                                        className="text-base text-blue-400 cursor-pointer"
                                         onClick={() => window.open(`https://github.com/${currentUser.githubId}`, '_blank')}
                                     >
                                         @{currentUser.githubId}
@@ -274,13 +286,13 @@ const LeaderBoard = () => {
                                     <td className="px-6 py-3 whitespace-nowrap">
                                         <div className="flex items-center">
                                             {/* <img className="h-10 w-10 rounded-full border-2 border-[#FF4545]" src={contributor.avatarUrl || "https://github.com/identicons/jasonlong.png"} alt="" /> */}
-                                            <img 
-                                                className="h-12 w-12 rounded-full border-2 border-[#FF4545]" 
-                                                src={contributor.githubId ? `https://avatars.githubusercontent.com/${contributor.githubId}` : "https://github.com/identicons/jasonlong.png"} 
+                                            <img
+                                                className="h-12 w-12 rounded-full border-2 border-[#FF4545]"
+                                                src={contributor.githubId ? `https://avatars.githubusercontent.com/${contributor.githubId}` : "https://github.com/identicons/jasonlong.png"}
                                                 alt="Contributor's avatar"
                                             />
                                             <div className="ml-4">
-                                                <div className="text-sm font-medium text-white">{contributor.githubId}</div> 
+                                                <div className="text-sm font-medium text-white">{contributor.githubId}</div>
                                             </div>
                                         </div>
                                     </td>
