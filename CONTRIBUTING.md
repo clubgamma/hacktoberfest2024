@@ -162,12 +162,12 @@ git push origin feature/your-feature-name
 - Be respectful and inclusive
 - Provide constructive feedback
 - Help others who are contributing
-- Follow our [Code of Conduct](CODE_OF_CONDUCT.md)
+- Follow our [Code of Conduct](https://clubgamma.github.io/code-of-conduct/)
 
 ## Need Help?
 
 - Feel free to ask questions in the issue comments
-- Join our [Discord] for real-time discussions
+- Join our [Discord](https://discord.com/invite/CgMRHtXjrf) for real-time discussions
 
 ## License
 
