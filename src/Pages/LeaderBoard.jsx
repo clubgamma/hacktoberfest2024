@@ -120,6 +120,22 @@ const LeaderBoard = () => {
         setPage(1);
     };
 
+    const debouncedPointsRangeChange = useCallback(
+        debounce(([min, max]) => {
+            setFilters(prev => ({ ...prev, minPoints: min, maxPoints: max }));
+            setPage(1);
+        }, 300),
+        []
+    , []);
+
+    const debouncedMinPRSChange = useCallback(
+        debounce(([minPrs]) => {
+            setFilters(prev => ({ ...prev, minPrs: minPrs }));
+            setPage(1);
+        }, 300),
+        []
+    , []);
+
     function debounce(func, wait) {
         let timeout;
         return function executedFunction(...args) {
@@ -217,8 +233,7 @@ const LeaderBoard = () => {
                                                     defaultValue={[filters.minPoints, filters.maxPoints]}
                                                     max={100}
                                                     step={1}
-                                                    onValueChange={([min, max]) =>
-                                                        setFilters(prev => ({ ...prev, minPoints: min, maxPoints: max }))}
+                                                    onValueChange={debouncedPointsRangeChange}
                                                     className="bg-[#3A3A3A]"
                                                 />
                                                 <div className="flex justify-between text-sm text-gray-400">
@@ -232,8 +247,7 @@ const LeaderBoard = () => {
                                                     defaultValue={[filters.minPrs]}
                                                     max={50}
                                                     step={1}
-                                                    onValueChange={([value]) =>
-                                                        setFilters(prev => ({ ...prev, minPrs: value }))}
+                                                    onValueChange={debouncedMinPRSChange}
                                                     className="bg-[#3A3A3A]"
                                                 />
                                                 <div className="text-sm text-gray-400">
