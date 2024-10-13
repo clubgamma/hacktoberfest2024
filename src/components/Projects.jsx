@@ -80,6 +80,7 @@ export default function ProjectShowcase() {
 
 function ProjectCard({ title, description, buttonText, onButtonClick }) {
   const [isHovered, setIsHovered] = useState(false)
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <motion.div
@@ -90,6 +91,7 @@ function ProjectCard({ title, description, buttonText, onButtonClick }) {
       transition={{ duration: 0.1 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
+      onClick={isMobile ? () => setIsHovered(!isHovered) : null}
     >
       <div className="p-6">
         <motion.h2
@@ -110,7 +112,10 @@ function ProjectCard({ title, description, buttonText, onButtonClick }) {
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
+          animate={{
+            opacity: isHovered || isMobile ? 1 : 0,
+            y: isHovered || isMobile ? 0 : 20,
+          }}
           transition={{ duration: 0.3 }}
         >
           <button
