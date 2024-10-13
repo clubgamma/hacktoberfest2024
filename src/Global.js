@@ -60,4 +60,13 @@ export default class Global {
             throw new Error("Error sending data");
         }
     }
+
+    static async getStats(){
+        try{
+            const stats = await this.httpGet("/stats")
+            return stats;
+        }catch (error){
+            throw new Error("Error Fetching Stats");
+        }
+    }
 }
