@@ -4,23 +4,23 @@ import { GitPullRequest, Users, FolderGit, Unplug } from "lucide-react";
 import Global from "@/Global";
 
 const CountUp = ({ end, duration = 2000 }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   useEffect(() => {
-    let startTime = null;
-    const animateCount = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const progress = timestamp - startTime;
-      const percentage = Math.min(progress / duration, 1);
-      setCount(Math.floor(end * percentage));
-      if (percentage < 1) {
-        requestAnimationFrame(animateCount);
+      let startTime = null
+      const animateCount = (timestamp) => {
+          if (!startTime) startTime = timestamp
+          const progress = timestamp - startTime
+          const percentage = Math.min(progress / duration, 1)
+          setCount(Math.floor(end * percentage))
+          if (percentage < 1) {
+              requestAnimationFrame(animateCount)
+          }
       }
-    };
-    requestAnimationFrame(animateCount);
-  }, [end, duration]);
+      requestAnimationFrame(animateCount)
+  }, [end, duration])
 
-  return <>{count}</>;
+  return <>{count}</>
 };
 
 const Stat = () => {
@@ -31,21 +31,9 @@ const Stat = () => {
       try {
         const data = await Global.getStats();
         const mappedStats = [
-          {
-            icon: GitPullRequest,
-            label: "Pull Requests",
-            value: data.numberOfPr,
-          },
-          {
-            icon: Users,
-            label: "Contributors",
-            value: data.numberOfContributors,
-          },
-          {
-            icon: FolderGit,
-            label: "Open-Source Projects",
-            value: data.numberOfRepos,
-          },
+          { icon: GitPullRequest, label: "Pull Requests", value: data.numberOfPr },
+          { icon: Users, label: "Contributors", value: data.numberOfContributors },
+          { icon: FolderGit, label: "Open-Source Projects", value: data.numberOfRepos },
         ];
         setStats(mappedStats);
       } catch (error) {
