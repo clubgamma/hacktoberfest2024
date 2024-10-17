@@ -11,8 +11,6 @@
 
 - **🌀 Code Style? Do YOU:** Whether your code is a spotless masterpiece 🎨 or a chaotic explosion 🌪️ of genius, as long as it works, it works! No judgment here. 😏
 
-- **👩‍💻 Add Your Name to the Hall of Fame:** Don’t forget to sign your work ✍️. Drop your name in the `contributorsList` file. Leave your mark!
-
 - **Tiny but Mighty PRs 🧚‍♀️:** Small pull requests = 💨 faster merges. Minimize conflicts and make life easier for everyone. Let’s keep it swift!
 
 
