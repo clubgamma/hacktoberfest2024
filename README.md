@@ -1,10 +1,7 @@
----
-
 # 🎉 Contribution Guidelines 🚀
 
 **Welcome, Rockstars!** 🤘🎸 We're super excited that you want to contribute to the **Club Gamma Project!** 🦸‍♂️💻 Whether you're an open-source newbie or a seasoned coder, your magic 🪄 matters. Ready to dive in? Let's create something awesome together! 🚀💥
 
----
 
 ## 🔥 General Rules to Rock by 🎧
 
@@ -18,7 +15,6 @@
 
 - **Tiny but Mighty PRs 🧚‍♀️:** Small pull requests = 💨 faster merges. Minimize conflicts and make life easier for everyone. Let’s keep it swift!
 
----
 
 ## 🚀 Getting Started – Let’s Get This Party Started! 🥳
 
@@ -69,7 +65,6 @@ Alright, you're in? Here’s how to get rolling! 🎱
 8. **🏆 Time to Shine – Create a Pull Request!**
    - Head over to your forked repo and create a pull request! 🚀🎉 Let’s see that PR flow!
 
----
 
 ## 🚨 Avoiding Conflicts – Keep Your Fork as Fresh as Your Beats 🎶
 
@@ -98,16 +93,12 @@ Let’s keep things **smooth** by staying in sync with the main repo, yeah? 🤘
 4. **🚨 Stay Updated, Stay Cool:**
    - Pull regularly to keep your fork fresh and aligned with the upstream repo. Trust us, your future self will thank you. 😎
 
----
 
 ## 🎉 Let’s Build Something Legendary! 🦸‍♀️💥
 
 We’re **stoked** to have you here, and we can’t wait to see what you bring to the table! Whether it’s a small tweak or a big feature, you’re contributing to something **EPIC**. 💥🤘
 
----
 
 🤝 **Thank you** for being part of this awesome community. Let's make this project **rock** together! 🤘🔥💻
 
 **— Team Club Gamma** 💻🎉
-
----
