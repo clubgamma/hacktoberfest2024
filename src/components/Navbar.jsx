@@ -90,7 +90,7 @@ const Navbar = ({ onHeroClick, onContactClick, onQandAClick, onStatusClick, onPr
                 </div>
 
                 {/* Navbar Links (visible on larger screens) */}
-                <div className="hidden lg:flex items-center gap-12 font-montserrat text-[1rem]">
+                <div className="hidden lg:flex items-center gap-10 font-montserrat text-[1rem]">
                     <button onClick={onHeroClick}
                         className="text-white hover:text-red-500 transition-all duration-300">Home
                     </button>
@@ -117,6 +117,11 @@ const Navbar = ({ onHeroClick, onContactClick, onQandAClick, onStatusClick, onPr
                                                 className="text-white block w-full py-2 px-4 hover:bg-[rgba(255,255,255,0.1)] rounded  hover:text-red-500 transition-all duration-300">Projects
                                             </button>
                                         </NavigationMenuLink>
+                                        <NavigationMenuLink asChild>
+                                            <button onClick={onContactClick}
+                                                className="text-white block w-full py-2 px-4 hover:bg-[rgba(255,255,255,0.1)] rounded  hover:text-red-500 transition-all duration-300">Contact
+                                            </button>
+                                        </NavigationMenuLink>
                                     </div>
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
@@ -124,9 +129,6 @@ const Navbar = ({ onHeroClick, onContactClick, onQandAClick, onStatusClick, onPr
                     </NavigationMenu>
 
 
-                    <button onClick={onContactClick}
-                        className="text-white hover:text-red-500 transition-all duration-300">Contact
-                    </button>
                     <Link to="/leaderboard"
                         className="text-white hover:text-red-500 transition-all duration-300">Leaderboard
                     </Link> {/* Add this line */}
@@ -167,6 +169,9 @@ const Navbar = ({ onHeroClick, onContactClick, onQandAClick, onStatusClick, onPr
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>
+                    <Link to='/team' className='text-white hover:text-red-500 transition-all duration-300'>
+                        Team
+                    </Link>
 
                 </div>
 
@@ -208,69 +213,71 @@ const Navbar = ({ onHeroClick, onContactClick, onQandAClick, onStatusClick, onPr
                 </div>
             </nav>
 
-                <motion.div
-                    className="fixed inset-y-0 left-0 font-dm-sans w-64 bg-gray-900 z-50 lg:hidden overflow-y-auto"
-                    variants={sidebarVariants}
-                    initial="closed"
-                    animate={sidebarOpen ? "open" : "closed"}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                >
-                    <div className="p-4">
-                        <img className="w-10 h-10 rounded-full mb-4" src={logo} alt="Logo" />
-                        <nav className="space-y-6">
-                            <Link to="/" onClick={() => setSidebarOpen(false)} className="text-white block hover:text-red-500 transition-colors duration-200">Home</Link>
-                            <button onClick={()=>{onQandAClick();setSidebarOpen(false)}} className="text-white block hover:text-red-500 transition-colors duration-200 w-full text-left">Q&A</button>
-                            <button onClick={()=>{onStatusClick();setSidebarOpen(false)}} className="text-white block hover:text-red-500 transition-colors duration-200 w-full text-left">Stats</button>
-                            <button onClick={()=>{onProjectsClick();setSidebarOpen(false)}} className="text-white block hover:text-red-500 transition-colors duration-200 w-full text-left">Projects</button>
-                            <button onClick={()=>{onContactClick();setSidebarOpen(false)}} className="text-white block hover:text-red-500 transition-colors duration-200 w-full text-left">Contact</button>
-                            <Link to="/leaderboard" onClick={() => setSidebarOpen(false)} className="text-white block hover:text-red-500 transition-colors duration-200">Leaderboard</Link>
+            <motion.div
+                className="fixed inset-y-0 left-0 font-dm-sans w-64 bg-gray-900 z-50 lg:hidden overflow-y-auto"
+                variants={sidebarVariants}
+                initial="closed"
+                animate={sidebarOpen ? "open" : "closed"}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+                <div className="p-4">
+                    <img className="w-10 h-10 rounded-full mb-4" src={logo} alt="Logo" />
+                    <nav className="space-y-6">
+                        <Link to="/" onClick={() => setSidebarOpen(false)} className="text-white block hover:text-red-500 transition-colors duration-200">Home</Link>
+                        <button onClick={() => { onQandAClick(); setSidebarOpen(false) }} className="text-white block hover:text-red-500 transition-colors duration-200 w-full text-left">Q&A</button>
+                        <button onClick={() => { onStatusClick(); setSidebarOpen(false) }} className="text-white block hover:text-red-500 transition-colors duration-200 w-full text-left">Stats</button>
+                        <button onClick={() => { onProjectsClick(); setSidebarOpen(false) }} className="text-white block hover:text-red-500 transition-colors duration-200 w-full text-left">Projects</button>
+                        <button onClick={() => { onContactClick(); setSidebarOpen(false) }} className="text-white block hover:text-red-500 transition-colors duration-200 w-full text-left">Contact</button>
+                        <Link to="/leaderboard" onClick={() => setSidebarOpen(false)} className="text-white block hover:text-red-500 transition-colors duration-200">Leaderboard</Link>
 
-                            <div className="relative">
-                                <button
-                                    onClick={toggleEvents}
-                                    className="text-white flex items-center justify-between w-full hover:text-red-500 transition-colors duration-200"
+                        <div className="relative">
+                            <button
+                                onClick={toggleEvents}
+                                className="text-white flex items-center justify-between w-full hover:text-red-500 transition-colors duration-200"
+                            >
+                                Events
+                                <motion.div
+                                    animate={{ rotate: eventsOpen ? 180 : 0 }}
+                                    transition={{ duration: 0.3 }}
                                 >
-                                    Events
+                                    <ChevronDown size={16} />
+                                </motion.div>
+                            </button>
+                            <AnimatePresence>
+                                {eventsOpen && (
                                     <motion.div
-                                        animate={{ rotate: eventsOpen ? 180 : 0 }}
-                                        transition={{ duration: 0.3 }}
+                                        variants={eventsVariants}
+                                        initial="closed"
+                                        animate="open"
+                                        exit="closed"
+                                        className="overflow-hidden"
                                     >
-                                        <ChevronDown size={16} />
+                                        <div className="pl-4 space-y-2 mt-2">
+                                            <Link to="/events/2024" onClick={() => { setSidebarOpen(false); setEventsOpen(false) }} className="text-white block hover:text-red-500 transition-colors duration-200">2024</Link>
+                                            <Link to="/events/2021" onClick={() => { setSidebarOpen(false); setEventsOpen(false) }} className="text-white block hover:text-red-500 transition-colors duration-200">2021</Link>
+                                            <Link to="/events/2020" onClick={() => { setSidebarOpen(false); setEventsOpen(false) }} className="text-white block hover:text-red-500 transition-colors duration-200">2020</Link>
+                                        </div>
                                     </motion.div>
-                                </button>
-                                <AnimatePresence>
-                                    {eventsOpen && (
-                                        <motion.div
-                                            variants={eventsVariants}
-                                            initial="closed"
-                                            animate="open"
-                                            exit="closed"
-                                            className="overflow-hidden"
-                                        >
-                                            <div className="pl-4 space-y-2 mt-2">
-                                                <Link to="/events/2024" onClick={() =>{ setSidebarOpen(false);setEventsOpen(false)}} className="text-white block hover:text-red-500 transition-colors duration-200">2024</Link>
-                                                <Link to="/events/2021" onClick={() => {setSidebarOpen(false);setEventsOpen(false)}} className="text-white block hover:text-red-500 transition-colors duration-200">2021</Link>
-                                                <Link to="/events/2020" onClick={() => {setSidebarOpen(false);setEventsOpen(false)}} className="text-white block hover:text-red-500 transition-colors duration-200">2020</Link>
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                        <Link to="/team" onClick={() => setSidebarOpen(false)} className="text-white block hover:text-red-500 transition-colors duration-200">Team</Link>
 
-                            <hr className="border-gray-700" />
-                            {Global.user ? (
-                                <>
-                                    <Link to={`/profile/${Global.user.githubId}`} className="text-white block hover:text-red-500 transition-colors duration-200">
-                                        Profile
-                                    </Link>
-                                    <button onClick={handleLogout} className="text-white block hover:text-red-500 transition-colors duration-200 w-full text-left">Logout</button>
-                                </>
-                            ) : (
-                                <Button onClick={handleGithubLogin} className="text-white bg-red-500 hover:bg-red-600 transition-colors duration-200 block w-full">Continue with GitHub</Button>
-                            )}
-                        </nav>
-                    </div>
-                </motion.div>
+
+                        <hr className="border-gray-700" />
+                        {Global.user ? (
+                            <>
+                                <Link to={`/profile/${Global.user.githubId}`} className="text-white block hover:text-red-500 transition-colors duration-200">
+                                    Profile
+                                </Link>
+                                <button onClick={handleLogout} className="text-white block hover:text-red-500 transition-colors duration-200 w-full text-left">Logout</button>
+                            </>
+                        ) : (
+                            <Button onClick={handleGithubLogin} className="text-white bg-red-500 hover:bg-red-600 transition-colors duration-200 block w-full">Continue with GitHub</Button>
+                        )}
+                    </nav>
+                </div>
+            </motion.div>
 
             <Outlet />
         </>
