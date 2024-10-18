@@ -64,7 +64,7 @@ const Navbar = ({ onHeroClick, onContactClick, onQandAClick, onStatusClick, onPr
                                     Explore
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent className="bg-[rgba(60,37,37,0.89)] border-[1px] border-[rgba(74,62,62,0.89)]">
-                                    <div className="p-2 h-16 flex bg-[rgba(36,21,21,0.89)] rounded-md shadow-lg ">
+                                    <div className="p-2  bg-[rgba(36,21,21,0.89)] rounded-md shadow-lg ">
                                         <NavigationMenuLink asChild>
                                             <button onClick={onQandAClick}
                                                 className="text-white block w-full py-2 px-4 hover:bg-[rgba(255,255,255,0.1)] rounded  hover:text-red-500 transition-all duration-300">Q&A
