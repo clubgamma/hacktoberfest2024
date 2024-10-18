@@ -9,6 +9,7 @@ import Navbar from '@/components/Navbar'
 import RedirectPage from "@/Pages/Redirect"
 import Events from './Pages/Events'
 import { infinity } from "ldrs";
+import Teams from './Pages/Team'
 infinity.register()
 
 
@@ -72,6 +73,7 @@ function App() {
                 <Route path="leaderboard" element={<LeaderBoard />} />
                 <Route path="events/:year" element={<Events />} />
                 <Route path="profile/:username" element={<Profile />} />
+                <Route path='/team' element={<Teams />} />
             </Route>
             <Route path="/redirect" element={<RedirectPage />} />
         </Routes>
