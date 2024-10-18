@@ -7,6 +7,7 @@ import LeaderBoard from '@/Pages/LeaderBoard'
 import Profile from '@/Pages/Profile'
 import Navbar from '@/components/Navbar'
 import RedirectPage from "@/Pages/Redirect"
+import Events from './Pages/Events'
 
 function App() {
     const [loaded, setLoaded] = useState(false);
@@ -66,6 +67,7 @@ function App() {
             }>
                 <Route index element={<Home/>}/>
                 <Route path="leaderboard" element={<LeaderBoard/>}/>
+                <Route path="events/:year" element={<Events/>}/>
                 <Route path="profile/:username" element={<Profile/>}/>
             </Route>
             <Route path="/redirect" element={<RedirectPage />} />
