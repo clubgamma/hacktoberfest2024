@@ -8,6 +8,9 @@ import Profile from '@/Pages/Profile'
 import Navbar from '@/components/Navbar'
 import RedirectPage from "@/Pages/Redirect"
 import Events from './Pages/Events'
+import { infinity } from "ldrs";
+infinity.register()
+
 
 function App() {
     const [loaded, setLoaded] = useState(false);
@@ -16,10 +19,10 @@ function App() {
 
     const handleNavigation = (section) => {
         if (location.pathname !== '/') {
-            navigate('/', {state: {scrollTo: section}});
+            navigate('/', { state: { scrollTo: section } });
         } else {
             const element = document.getElementById(section);
-            element?.scrollIntoView({behavior: 'smooth'});
+            element?.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
@@ -65,10 +68,10 @@ function App() {
                     onProjectsClick={() => handleNavigation('project')}
                 />
             }>
-                <Route index element={<Home/>}/>
-                <Route path="leaderboard" element={<LeaderBoard/>}/>
-                <Route path="events/:year" element={<Events/>}/>
-                <Route path="profile/:username" element={<Profile/>}/>
+                <Route index element={<Home />} />
+                <Route path="leaderboard" element={<LeaderBoard />} />
+                <Route path="events/:year" element={<Events />} />
+                <Route path="profile/:username" element={<Profile />} />
             </Route>
             <Route path="/redirect" element={<RedirectPage />} />
         </Routes>
