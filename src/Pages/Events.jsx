@@ -40,10 +40,10 @@ const Events = () => {
 
 
   return (
-    <div className="min-h-screen font-dm-sans bg-[#1e1e1e] text-white p-8 pt-20">
+    <div className="min-h-screen font-dm-sans bg-[#1e1e1e] text-white p-8 pt-28">
       <h1 className="text-4xl md:text-5xl font-bold mb-8 md:mb-12 text-center">
         <span className="text-[#ff6b6b]">
-          HackToberFest
+        Club gamma
         </span>
         <span className="text-white"> Events {year && `${year}`}</span>
       </h1>
